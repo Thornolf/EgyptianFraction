@@ -1,15 +1,18 @@
 #include <iostream>
 #include <cmath> // pour M_PI
+#include <egyptienne.hpp>
 
-#include "egyptienne.hpp" // comment faire <name.hpp>
-
+// patch microsoft
+#ifndef M_PI
+const double M_PI = 3.14159265358979323846;
+const double M_E  = 2.7182818284590452354;
+#endif
 
 int main()
  {
   fraction_egyptienne f(M_PI);
   fraction_egyptienne g(M_E);
   fraction_egyptienne h(1.986728);
-
   std::cout
    << "f=" << (float)f << " = " << f << std::endl
    << "g=" << (float)g << " = " << g << std::endl
@@ -29,7 +32,6 @@ int main()
    << "124/121=" << fraction_egyptienne(124.0/121) << std::endl
    << "64/81=" << fraction_egyptienne(64.0/81) << std::endl
    ;
-
   try
    {
     std::cout
@@ -42,6 +44,5 @@ int main()
     // on doit se rendre ici!
     std::cout << "bleh! " << e.what() << std::endl;
    }
-      
   return 0;
  }

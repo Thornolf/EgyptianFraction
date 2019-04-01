@@ -1,6 +1,6 @@
 include source.mk
 
-BINARY					=	amazink
+BINARY					=	egypte
 
 CC					=	g++
 
