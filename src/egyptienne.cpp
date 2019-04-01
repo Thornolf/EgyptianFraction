@@ -31,9 +31,9 @@ std::ostream &operator<<(std::ostream &out, const fraction_egyptienne &obj) {
 
   float nbr = obj.getValue();
   int entier = std::floor(nbr);
+  int x = 2;
   
   nbr -= entier;
-  int x = 2;
   out << entier;
   while (nbr > 0.0 && x < 10000)
     {
