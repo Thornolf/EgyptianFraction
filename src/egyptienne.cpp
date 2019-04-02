@@ -32,13 +32,23 @@ std::ostream &operator<<(std::ostream &out, const fraction_egyptienne &obj) {
   float nbr = obj.getValue();
   int entier = std::floor(nbr);
   int x = 2;
+  bool first = false;
   
   nbr -= entier;
-  out << entier;
+  if (entier > 0 || nbr == 0.0) {
+    out << entier;
+    first = true;
+  }
   while (nbr > 0.0 && x < 10000)
     {
       if (nbr >= (1.0/x)) {
-	out << " + " << "1/" << x;
+	if (first == true) {
+	  out << " + ";
+	} else {
+	  first = true;
+	}
+	  
+	out << "1/" << x;
 	nbr -= 1.0/x;
       }
       x++;

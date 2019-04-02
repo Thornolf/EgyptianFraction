@@ -9,7 +9,7 @@ const double M_E  = 2.7182818284590452354;
 #endif
 
 int main()
- {
+{
   fraction_egyptienne f(M_PI);
   fraction_egyptienne g(M_E);
   fraction_egyptienne h(1.986728);
